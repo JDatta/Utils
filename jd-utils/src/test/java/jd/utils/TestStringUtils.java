@@ -14,7 +14,7 @@ public class TestStringUtils {
 
   @Test
   public void testQuotedIndexOf() {
-    Assert.assertEquals(184, StringUtils.indexOf(str, ';', '\''));
+    Assert.assertEquals(184, StringUtils.indexOf(this.str, ';', '\''));
   }
 
   @Test
@@ -23,6 +23,14 @@ public class TestStringUtils {
       + "\"timestamp\" timestamp,\n    table1 int,\n    "
       + "f_cookie varchar(2048),\n    ipaddr varchar(2048),\n    "
       + "DEFAULT regexp_replace(table1.f_cookie, 'abc;abc', '')\n)";
-    Assert.assertEquals(expected, StringUtils.splitOnce(str, ';', '\''));
+    Assert.assertEquals(expected, StringUtils.splitOnce(this.str, ';', '\''));
+  }
+
+  @Test
+  public void testSimpleReplaceBetween() {
+    String original = "Lorem ipsum dolor sit amet";
+    String expected = "Lorem ipsum foo sit amet";
+    Assert.assertEquals(
+      expected, StringUtils.replaceBetween("ipsum", "sit", original, " foo "));
   }
 }
