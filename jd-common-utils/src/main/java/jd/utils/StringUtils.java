@@ -130,7 +130,7 @@ public class StringUtils {
 
     final String pattern =
       "(?s)(.*?" + Pattern.quote(startToken) +
-        " ).*?(" + Pattern.quote(endToken) + ")";
+        ").*?(" + Pattern.quote(endToken) + ")";
     final String repl = "$1" + replacement + "$2";
 
     return orig.replaceAll(pattern, repl);
