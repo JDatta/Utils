@@ -32,5 +32,6 @@ public class TestStringUtils {
     String expected = "Lorem ipsum foo sit amet";
     Assert.assertEquals(
       expected, StringUtils.replaceBetween("ipsum", "sit", original, " foo "));
+
   }
 }
